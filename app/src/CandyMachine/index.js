@@ -384,11 +384,7 @@ const CandyMachine = ({ walletAddress }) => {
 					[instructions, cleanupInstructions],
 					[signers, []]
 				)
-			).txs
-				.map((t) => t.txid)
-				.then(() =>
-					alert("Minted your token! Check your Phantom wallet!")
-				);
+			).txs.map((t) => t.txid);
 		} catch (e) {
 			console.log(e);
 		}
@@ -400,7 +396,16 @@ const CandyMachine = ({ walletAddress }) => {
 			<div className="machine-container">
 				<p>{`Drop Date: ${candyMachine.state.goLiveDateTimeString}`}</p>
 				<p>{`Items Minted: ${candyMachine.state.itemsRedeemed} / ${candyMachine.state.itemsAvailable}`}</p>
-				<button className="cta-button mint-button" onClick={mintToken}>
+				<button
+					className="cta-button mint-button"
+					onClick={() =>
+						mintToken().then(() =>
+							alert(
+								"Your NFT has been minted! Check your Phantom wallet"
+							)
+						)
+					}
+				>
 					Mint NFT
 				</button>
 			</div>
