@@ -1,0 +1,14 @@
+{
+	"name": "Anniyan",
+	"symbol": "ANN",
+	"image": "1.png",
+	"properties": {
+		"files": [{ "url": "1.png", "type": "image/png" }],
+		"creators": [
+			{
+				"address": "BqEgPTcDX1upXSee8DFhSgNmX5Mn72krsYVpfoKZPzEi",
+				"share": 100
+			}
+		]
+	}
+}
